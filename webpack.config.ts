@@ -1,3 +1,4 @@
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
@@ -36,6 +37,7 @@ const config: webpack.Configuration = {
       title: 'App!',
       template: 'src/index.html',
     }),
+    new ReactRefreshWebpackPlugin(),
   ],
   devServer: {
     port: 3000,
