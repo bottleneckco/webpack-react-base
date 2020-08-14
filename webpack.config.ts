@@ -1,8 +1,7 @@
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-
-import * as webpack from 'webpack';
 import path from 'path';
+import * as webpack from 'webpack';
 
 const config: webpack.Configuration = {
   mode: 'development',
@@ -22,21 +21,21 @@ const config: webpack.Configuration = {
             loader: 'ts-loader',
             options: {
               transpileOnly: true,
-            }
-          }
-        ]
-      }
-    ]
+            },
+          },
+        ],
+      },
+    ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.jsx', '.js']
+    extensions: ['.tsx', '.ts', '.jsx', '.js'],
   },
   plugins: [
     new ForkTsCheckerWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'App!',
       template: 'src/index.html',
-    })
+    }),
   ],
   devServer: {
     port: 3000,
@@ -44,7 +43,7 @@ const config: webpack.Configuration = {
     publicPath: '/',
     hot: true,
     historyApiFallback: true,
-  }
-}
+  },
+};
 
 export default config;
